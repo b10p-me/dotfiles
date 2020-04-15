@@ -1,5 +1,7 @@
 set autoindent          " copy indent from current line when starting a new line
 set hlsearch
+hi Search ctermbg=White
+hi Search ctermfg=Red
 nnoremap <Leader><space> :noh<Enter>
 nnoremap <Leader>w <Esc>:w<CR>
 nnoremap <Leader>q <Esc>:q<CR>
