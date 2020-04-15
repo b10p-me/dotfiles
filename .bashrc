@@ -102,6 +102,9 @@ export EDITOR="$VISUAL"
 
 #Disable ctrl+s from freezing window
 stty -ixon
+#disable ctrl+d from exiting the terminal
+set -o ignoreeof
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -122,3 +125,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export DISPLAY=:0
