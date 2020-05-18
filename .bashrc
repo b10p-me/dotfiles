@@ -126,4 +126,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias grep='grep -d skip'
+
 export DISPLAY=:0
