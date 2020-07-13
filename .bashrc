@@ -91,6 +91,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias v='vim'
+alias p='python'
+alias pd='python -m pdb -c continue'
+alias pi='python -i'
+alias pdi='python -i -m pdb -c continue'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
