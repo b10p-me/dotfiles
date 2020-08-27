@@ -1,3 +1,5 @@
+let mapleader = " "
+
 set autoindent          " copy indent from current line when starting a new line
 set hlsearch
 hi Search ctermbg=White
