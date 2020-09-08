@@ -63,6 +63,18 @@ else
 fi
 unset color_prompt force_color_prompt
 
+if [[ -f ~/.is_prod ]]; then
+  is_prod=true
+else
+  is_prod=false
+fi
+
+if [[ is_prod ]]; then
+  PSPROD='\[\033[38;5;0m\]\[\033[48;5;9m\]PROD\[$(tput sgr0)\]';
+  PS1="$PSPROD $PS1"
+fi
+
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
