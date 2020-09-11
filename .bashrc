@@ -69,7 +69,7 @@ else
   is_prod=false
 fi
 
-if [[ is_prod ]]; then
+if [[ "$is_prod" = true ]]; then
   PSPROD='\[\033[38;5;0m\]\[\033[48;5;9m\]PROD\[$(tput sgr0)\]';
   PS1="$PSPROD $PS1"
 fi
