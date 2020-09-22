@@ -63,14 +63,15 @@ else
 fi
 unset color_prompt force_color_prompt
 
-if [[ -f ~/.is_prod ]]; then
-  is_prod=true
-else
-  is_prod=false
+current_env=$(cat ~/.current_env)
+
+if [[ "$current_env" = prod ]]; then
+  PSPROD='\[\033[38;5;0m\]\[\033[48;5;9m\]PROD\[$(tput sgr0)\]';
+  PS1="$PSPROD $PS1"
 fi
 
-if [[ "$is_prod" = true ]]; then
-  PSPROD='\[\033[38;5;0m\]\[\033[48;5;9m\]PROD\[$(tput sgr0)\]';
+if [[ "$current_env" = stage ]]; then
+  PSPROD='\[\033[38;5;0m\]\[\033[48;5;9m\]STAGE\[$(tput sgr0)\]';
   PS1="$PSPROD $PS1"
 fi
 
