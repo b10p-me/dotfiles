@@ -19,21 +19,26 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-" allow toggling between local and default mode
-function TabToggle()
-  if &expandtab
-    set shiftwidth=8
-    set softtabstop=0
-    set noexpandtab
-  else
-    set shiftwidth=4
-    set softtabstop=4
-    set expandtab
-  endif
-endfunction
-nmap <F9> mz:execute TabToggle()<CR>'z
+highlight BadWhitespace ctermbg=red guibg=darkred
 
-syntax on
-hi Special ctermfg=red " for query specific keywords
-hi Underlined ctermfg=magenta cterm=bold " for local variables
-set tags=tags;
+augroup pygroup
+  au!
+  au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
+  au BufRead,BufNewFile *.py set encoding=utf-8
+augroup END
+
+" never connect to an X-server. Otherwise vim is slow to open when X-11
+" Forwarding is enabled
+set clipboard=exclude:.*
+
+" python with virtualenv support
+python3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  with open(activate_this, 'r') as f:
+    exec(f.read(), dict(__file__=activate_this))
+EOF
+
