@@ -1,6 +1,6 @@
 let mapleader = " "
 
-set autoindent          " copy indent from current line when starting a new line
+set cindent
 set hlsearch
 hi Search ctermbg=White
 hi Search ctermfg=Red
