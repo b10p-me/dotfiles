@@ -36,6 +36,15 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <Leader>g :YcmCompleter GoToDefinition<CR>
 " end ycm settings
 
+" syntastic settings
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+nnoremap <Leader>e :SyntasticCheck<CR>
+nnoremap <Leader>r :SyntasticReset<CR>
+" end syntastic settings
+
 set autoindent
 set hlsearch
 hi Search ctermbg=White
