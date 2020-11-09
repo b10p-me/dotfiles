@@ -145,3 +145,13 @@ if ! shopt -oq posix; then
 fi
 
 export DISPLAY=:0
+
+function wclip {
+  cat $* > ~/.tmux_buffer
+}
+
+function t {
+  [[ "$TERM" == "xterm" ]] || return 0 # This prevents recursive runs, in case t() is called after tmux is started.
+  ~/.utils/.watch_clipboard.sh &
+  tmux attach || tmux;
+}
