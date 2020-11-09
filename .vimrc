@@ -1,6 +1,7 @@
 let mapleader = " "
 
 set nocompatible              " be iMproved, required
+" Vundle stuff
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -45,7 +46,7 @@ nnoremap <Leader>e :SyntasticCheck<CR>
 nnoremap <Leader>r :SyntasticReset<CR>
 " end syntastic settings
 
-set autoindent
+set autoindent          " copy indent from current line when starting a new line
 set hlsearch
 hi Search ctermbg=White
 hi Search ctermfg=Red
