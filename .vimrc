@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim', {'pinned': 1}
 Plugin 'Valloric/YouCompleteMe', {'pinned': 1}
 Plugin 'vim-syntastic/syntastic', {'pinned': 1}
 Plugin 'nvie/vim-flake8', {'pinned': 1}
+Plugin 'jpalardy/vim-slime', {'pinned': 1}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +46,16 @@ let g:syntastic_check_on_wq = 0
 nnoremap <Leader>e :SyntasticCheck<CR>
 nnoremap <Leader>r :SyntasticReset<CR>
 " end syntastic settings
+
+" vim-slime settings
+let g:slime_target = "tmux"
+"let g:slime_dont_ask_default = 1
+"let g:slime_default_config = {"socket_name": "default"}
+let g:slime_no_mappings = 1
+nmap <Leader>a <Plug>SlimeLineSend
+nmap <Leader>z <Plug>SlimeParagraphSend
+xmap <Leader>a <Plug>SlimeRegionSend
+" end vim-slime settings
 
 set autoindent          " copy indent from current line when starting a new line
 set hlsearch
