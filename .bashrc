@@ -146,8 +146,17 @@ fi
 
 export DISPLAY=:0
 
-function wclip {
+function fclip {
   cat $* > ~/.tmux_buffer
+}
+
+function wclip {
+  if [[ -t 0 ]] # Script is called normally - Terminal input (keyboard) - interactive
+  then
+    echo -n $* > ~/.tmux_buffer
+  else # Script is getting input from pipe or file - non-interactive
+    cat $* | xargs echo -n > ~/.tmux_buffer
+  fi
 }
 
 function t {
