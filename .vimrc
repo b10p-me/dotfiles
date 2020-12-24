@@ -71,6 +71,10 @@ nnoremap <Leader>S <Esc>?import pdb;pdb\.set_trace()<Esc>0
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 set laststatus=2
 
+" line numbers
+nnoremap <Leader>n <Esc>:set number relativenumber<CR>
+nnoremap <Leader>m <Esc>:set nonumber norelativenumber<CR>
+
 " virtual tabstops using spaces
 set shiftwidth=2
 set softtabstop=2
