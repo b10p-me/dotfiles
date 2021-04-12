@@ -75,6 +75,9 @@ set laststatus=2
 nnoremap <Leader>n <Esc>:set number relativenumber<CR>
 nnoremap <Leader>m <Esc>:set nonumber norelativenumber<CR>
 
+" fix *
+nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
 " virtual tabstops using spaces
 set shiftwidth=2
 set softtabstop=2
