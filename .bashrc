@@ -166,5 +166,5 @@ function wclip {
 function t {
   [[ "$TERM" == "xterm" ]] || return 0 # This prevents recursive runs, in case t() is called after tmux is started.
   ~/.utils/.watch_clipboard.sh &
-  tmux attach || tmux;
+  tmux attach -d || tmux;
 }
