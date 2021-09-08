@@ -109,6 +109,7 @@ alias p='python'
 alias pd='python -m pdb -c continue'
 alias pi='python -i'
 alias pdi='python -i -m pdb -c continue'
+alias jp='python3 -m json.tool'
 
 alias gts='git status'
 alias gta='git add'
@@ -148,7 +149,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export DISPLAY=:0
+#export DISPLAY=:10.0
 
 function fclip {
   cat $* > ~/.tmux_buffer
@@ -168,3 +169,5 @@ function t {
   ~/.utils/.watch_clipboard.sh &
   tmux attach -d || tmux;
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
