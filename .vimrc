@@ -82,7 +82,9 @@ nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set expandtab
+"set expandtab
+set noexpandtab
+nnoremap <Leader><tab> <Esc>:set list listchars=tab:>-<CR>
 highlight BadWhitespace ctermbg=red guibg=darkred
 
 augroup pygroup
