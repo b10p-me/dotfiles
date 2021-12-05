@@ -176,4 +176,8 @@ function t {
   tmux attach -d || tmux;
 }
 
+function vcsv {
+	column -s, -t | less -#2 -S
+}
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
