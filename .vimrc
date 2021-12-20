@@ -84,8 +84,17 @@ set softtabstop=2
 set tabstop=2
 "set expandtab
 set noexpandtab
-nnoremap <Leader><tab> <Esc>:set list listchars=tab:>-<CR>
+nnoremap <Leader>` <Esc>:set list listchars=tab:>-<CR>
+nnoremap <Leader><tab> <Esc>:retab!<CR>
 highlight BadWhitespace ctermbg=red guibg=darkred
+
+fu! ResetSpaces()
+    set tabstop=2
+    set noexpandtab
+    %retab!
+endfunction
+
+autocmd BufWritePre *.py :call ResetSpaces()
 
 augroup pygroup
   au!
