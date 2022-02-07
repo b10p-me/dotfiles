@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euxo pipefail
 
+mkdir -p ~/.vim
 cd ~/.vim
 mkdir -p bundle
 cd bundle
@@ -15,7 +16,7 @@ git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git checkout 8bc02ee4877bfe07ed92cc4d471c353f1ab84ef6
 git submodule update --init --recursive
-sudo apt install build-essential cmake python3-dev
+sudo apt install build-essential cmake python3-dev -y
 python3 install.py --clangd-completer
 cd ..
 
