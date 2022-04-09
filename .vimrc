@@ -1,37 +1,27 @@
 let mapleader = " "
 
 set nocompatible              " be iMproved, required
-" Vundle stuff
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim', {'pinned': 1}
-Plugin 'Valloric/YouCompleteMe', {'pinned': 1}
-Plugin 'vim-syntastic/syntastic', {'pinned': 1}
-Plugin 'nvie/vim-flake8', {'pinned': 1}
-Plugin 'jpalardy/vim-slime', {'pinned': 1}
+"vim-plug stugg
+call plug#begin('~/.vim/plugged')
+" The default plugin directory will be as follows: '~/.vim/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" Unmanaged plugin (manually installed and updated)
+Plug '/home/ubuntu/.vim/plugged/YouCompleteMe'
+Plug '/home/ubuntu/.vim/plugged/syntastic'
+Plug '/home/ubuntu/.vim/plugged/vim-easy-align'
+
+" Initialize plugin system
+call plug#end()
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 let g:python_recommended_style=0
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " ycm settings
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -39,7 +29,7 @@ map <Leader>g :YcmCompleter GoToDefinition<CR>
 " end ycm settings
 
 " syntastic settings
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0

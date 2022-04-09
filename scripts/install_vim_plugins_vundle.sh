@@ -8,9 +8,9 @@ cd bundle
 
 #Vundle
 git clone https://github.com/gmarik/Vundle.vim.git
-cd Vundle.vim
+pushd Vundle.vim
 git checkout b255382d6242d7ea3877bf059d2934125e0c4d95
-cd ..
+popd
 
 git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
