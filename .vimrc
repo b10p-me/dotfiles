@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
 Plug '/home/ubuntu/.vim/plugged/YouCompleteMe'
 Plug '/home/ubuntu/.vim/plugged/syntastic'
 Plug '/home/ubuntu/.vim/plugged/vim-easy-align'
+Plug '/home/ubuntu/.vim/plugged/yats.vim'
+Plug '/home/ubuntu/.vim/plugged/vim-jsx-pretty'
+Plug '/home/ubuntu/.vim/plugged/vim-js'
 
 " Initialize plugin system
 call plug#end()
@@ -44,6 +47,9 @@ nnoremap <Leader>r :SyntasticReset<CR>
 nnoremap <Leader>] :lnext<CR>
 nnoremap <Leader>[ :lprevious<CR>
 " end syntastic settings
+
+" prettier for typescript
+" autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
 set autoindent          " copy indent from current line when starting a new line
 set hlsearch

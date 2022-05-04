@@ -33,4 +33,22 @@ pushd vim-easy-align
 git checkout 12dd6316974f71ce333e360c0260b4e1f81169c3
 popd
 
+echo Installing yats.vim
+git clone https://github.com/HerringtonDarkholme/yats.vim
+pushd yats.vim
+git checkout 3e6a46271fe307741dbd06507e36ec08f118263a
+popd
+
+echo Installing vim-jsx-pretty
+git clone https://github.com/MaxMEllon/vim-jsx-pretty
+pushd vim-jsx-pretty
+git checkout 6989f1663cc03d7da72b5ef1c03f87e6ddb70b41
+popd
+
+echo Installing vim-js
+git clone https://github.com/yuezk/vim-js
+pushd vim-js
+git checkout 90f340d31907590fad059cd9aab03a55ab49e352
+popd
+
 echo "vim-plug was installed. To add new plugins, add plugins to ~/.vimrc, then open vim and run :PlugInstall - check status with :PlugStatus"
