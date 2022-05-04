@@ -25,27 +25,25 @@ let g:python_recommended_style=0
 
 " ycm settings
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_auto_hover=''
+" disable annoying question about adding extra conf
+let g:ycm_extra_conf_globlist = ['!~/*']
 map <Leader>g :YcmCompleter GoToDefinition<CR>
+map <leader>f <plug>(YCMHover)
 " end ycm settings
 
 " syntastic settings
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+" populate loc list to allow :lnext and :lprev to jump between errors
+let g:syntastic_always_populate_loc_list = 1
 nnoremap <Leader>e :SyntasticCheck<CR>
 nnoremap <Leader>r :SyntasticReset<CR>
+nnoremap <Leader>] :lnext<CR>
+nnoremap <Leader>[ :lprevious<CR>
 " end syntastic settings
-
-" vim-slime settings
-let g:slime_target = "tmux"
-"let g:slime_dont_ask_default = 1
-"let g:slime_default_config = {"socket_name": "default"}
-let g:slime_no_mappings = 1
-nmap <Leader>a <Plug>SlimeLineSend
-nmap <Leader>z <Plug>SlimeParagraphSend
-xmap <Leader>a <Plug>SlimeRegionSend
-" end vim-slime settings
 
 set autoindent          " copy indent from current line when starting a new line
 set hlsearch
